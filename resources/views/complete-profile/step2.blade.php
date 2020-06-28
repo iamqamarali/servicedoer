@@ -25,7 +25,7 @@
                     @csrf
                     <input type="file" name="profile_pic" class="custom-file-input profile-pic-file-input" accept="image/x-png,image/gif,image/jpeg">
                     <div class="profile-pic-image-name"></div>
-                    <p class="profile">Hi Haider</p>
+                    <p class="profile">{{ auth()->user()->name }}</p>
 
                     <br>
                     @include('partials.errors')

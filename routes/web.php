@@ -22,10 +22,11 @@ Route::group(['middleware' => 'check-complete-profile' ] , function(){
     Route::get('/service-providers/{service}', 'PagesController@serviceProviderByService');
     Route::get('/service-providers/{city}/{service}', 'PagesController@serviceProviders');
     Route::get('/profile/{serviceProvider}', 'PagesController@serviceProviderProfile')->name('service-provider.profile');
-});
 
-Route::middleware('auth')->group(function(){
-    Route::get('/orders', 'OrdersController@index');
+    Route::post('/givequote/project/{project}', 'QuoteController@giveQuote')->name('give-quote');
+    Route::get('/service-provider/orders', 'OrdersController@serviceProviderOrders');
+
+    Route::get('/service-provider/orders/{order}', 'OrdersController@showServiceProviderOrder');
 });
 
 
@@ -37,7 +38,6 @@ Route::middleware(['auth', 'user-type:service-provider'])->group(function(){
     Route::get('/complete-profile/step3', 'PagesController@completeProfileStep3');
     Route::get('/subscribe/{package}', 'SubscriptionController@subscribe');
 
-    Route::post('/givequote/project/{project}', 'QuoteController@giveQuote')->name('give-quote');
 });
 
 
@@ -49,9 +49,11 @@ Route::middleware('auth')->middleware('user-type:customer')->group(function(){
     Route::post('/create-project/requestquote/{provider}', 'QuoteController@createProjectRequestQuote');
 
     Route::post('/orders/{quote}', 'OrdersController@orderQuote')->name('order-quote');
-
     Route::get('/orders/{Order}' , 'OrdersController@show');
     Route::post('/orders/{order}/mark-complete', 'OrdersController@markComplete');
+
+    Route::post('/orders/{order}/mark-cancel', 'OrdersController@markCancel');
+    Route::get('/orders', 'OrdersController@index');
 });
 
 

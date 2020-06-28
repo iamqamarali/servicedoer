@@ -14,6 +14,7 @@ class Notification extends Model
                 // type => 2 == quote received
                 // type => 3 == order completed notification to service provider
                 // type => 4 == customer left review
+                // type => 5 == order cancelled
             // ]
         'read' // => true, false
     ];

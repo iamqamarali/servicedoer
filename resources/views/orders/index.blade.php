@@ -37,14 +37,19 @@
                         <span class="progress">{{ $order->status }}</span>
                     @elseif($order->status == 'Completed')
                         <span class="completed-order">{{ $order->status }}</span>
-                    @elseif($order->status == 'Cancelled Order')
+                    @elseif($order->status == 'Cancelled')
                         <span class="cancelled-order">{{ $order->status }}</span>
                     @endif
                 </div>
                 @if ($order->status == 'In Progress')
                     <div class="col-md-2 text-center order-btns">
                         <button class="order-btn order-complete-btn" order-id="{{ $order->id }}" data-toggle="modal" data-target="#order-complete-modal">Order Complete</button>
-                        <button class="cancel-btn order-cancel-btn" order-id="{{ $order->id }}" data-toggle="modal" data-target="#cancelorder">Cancel Order</button>
+                        <button class="cancel-btn order-cancel-btn" order-id="{{ $order->id }}" data-toggle="modal" data-target="#order-cancel-modal">Cancel Order</button>
+                        <a href="/orders/{{$order->id}}" class="cancel-btn order-details-btn" order-id="{{ $order->id }}" >Order Details</a>
+                    </div>
+                @else
+                    <div class="col-md-2 text-center order-btns">
+                        <a href="/orders/{{$order->id}}" class="cancel-btn order-details-btn" order-id="{{ $order->id }}" >Order Details</a>
                     </div>
                 @endif
             </div>
@@ -153,7 +158,7 @@
               <div class="row">
                     <div class="col-md-4"></div> 
                     <div class="col-md-4 text-center">
-                       <button type="submit" class="continue-review">Continue</button>
+                       <button type="submit" class="continue-review">Complete Order</button>
                     </div>    
                     <div class="col-md-4"></div>  
               </div>
@@ -166,20 +171,21 @@
 
 
 <!-- order cancel modal -->
-<div class="modal fade" id="cancelorder" role="dialog">
+<div class="modal fade " id="order-cancel-modal" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Cancellation of order</h4>
         </div>
         <div class="modal-body">
-          <form action="" class="review-service">
+          <form action="" class="review-service order-cancel-form" method="post">
+              @csrf
               <div class="row">
                  <div class="col-md-1"></div> 
                  <div class="col-md-10">
                      <div class="form-group">
                         <label for="modal-para1" class="modal-para2">Why do you wish to cancel the order?</label>
-                        <textarea name="reviews" cols="30" rows="4" class="form-control reviews-area"></textarea>
+                        <textarea name="cancellation_reason" cols="30" rows="4" class="form-control reviews-area"></textarea>
                      </div>
                  </div>    
                   <div class="col-md-1"></div>  
@@ -222,9 +228,10 @@
         var orderId = $(this).attr('order-id')
         $('.review-form').attr('action', '/orders/'+ orderId +'/mark-complete');
     })
-    $('#order-complete-modal').on('shown.bs.modal', function(){
-
-    });
+    $('.order-cancel-btn').click(function(){
+        var orderId = $(this).attr('order-id')
+        $('.order-cancel-form').attr('action', '/orders/'+orderId+'/mark-cancel');        
+    })
 
 </script>
 @endpush

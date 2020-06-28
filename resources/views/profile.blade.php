@@ -18,6 +18,15 @@
                     @else
                       <a href="/login" class="hire-me ">Get Quote</a>
                     @endauth
+
+                    @auth
+                      @if (auth()->user()->type == 'service-provider')
+                        <div>
+                          <b>Connects Available: </b>
+                          {{ auth()->user()->connects }}                      
+                        </div>
+                      @endif
+                    @endauth                      
                  </div>
    
               </div>

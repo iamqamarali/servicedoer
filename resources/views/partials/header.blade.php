@@ -16,7 +16,11 @@
                 @auth
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
-                            <a href="/orders" class="nav-link">Orders</a>
+                            @if (auth()->user()->type=='customer')
+                                <a href="/orders" class="nav-link">Orders</a>
+                            @else
+                                <a href="/service-provider/orders" class="nav-link">Orders</a>
+                            @endif
                         </li>
                         <li class="nav-item dropdown">
                             <a href="#" class="nav-link  dropdown-toggle" data-toggle="dropdown">
@@ -40,7 +44,7 @@
                                                 {{ $notification->data['message'] }}
                                             </a>
                                         @elseif($notification->data['type'] == 3)
-                                            <a href="#" 
+                                            <a href="/service-provider/orders/{{ $notification->data['order_id'] }}" 
                                                 class="order-completed-notification"
                                                 order-id="{{ $notification->data['order_id'] }}"
                                                 notification-id="{{ $notification->id }}">
@@ -50,6 +54,13 @@
                                             <a href="#" 
                                                 class="new-review-notification"
                                                 review-id="{{ $notification->data['review_id'] }}"
+                                                notification-id="{{ $notification->id }}">
+                                                {{ $notification->data['message'] }}
+                                            </a>
+                                        @elseif($notification->data['type'] == 5)
+                                            <a href="/service-provider/orders/{{ $notification->data['order_id'] }}" 
+                                                class="order-cancelled-notification"
+                                                order-id="{{ $notification->data['order_id'] }}"
                                                 notification-id="{{ $notification->id }}">
                                                 {{ $notification->data['message'] }}
                                             </a>
@@ -91,5 +102,38 @@
 @include('partials.give-quote-modal')
 @include('partials.order-quote-modal')
 
+
+@push('scripts')
+<script>
+    $('.order-completed-notification').click(function(e){
+        e.preventDefault();
+        var notificationId = $(this).attr('notification-id')
+        url = $(this).attr('href')
+        $.ajax({
+            method: 'get',
+            url : '/api/notifications/markasread/'+notificationId,
+            success: function(res){
+                console.log(res)
+                window.location = url;
+            },
+        })
+    })
+
+    $('.order-cancelled-notification').click(function(e){
+        e.preventDefault();
+        var notificationId = $(this).attr('notification-id')
+        url = $(this).attr('href')
+        $.ajax({
+            method: 'get',
+            url : '/api/notifications/markasread/'+notificationId,
+            success: function(res){
+                console.log(res)
+                window.location = url;
+            },
+        })
+    })
+
+</script>
+@endpush
 
 

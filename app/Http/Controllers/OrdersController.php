@@ -24,7 +24,17 @@ class OrdersController extends Controller
     }
 
 
- 
+
+    /**
+     * 
+     * 
+     */
+    public function index(){
+        $orders = auth()->user()->customer_orders;
+        return view('orders.index')->withOrders($orders);
+    }
+
+     
     /**
      * 
      * 
@@ -34,13 +44,23 @@ class OrdersController extends Controller
         return view('orders.show')->withOrder($order);
     }
 
+
+
     /**
      * 
      * 
      */
-    public function index(){
-        $orders = auth()->user()->customer_orders;
-        return view('orders.index')->withOrders($orders);
+    public function serviceProviderOrders(){
+        $orders = auth()->user()->service_provider_orders;
+        return view('orders.service-provider-orders')->withOrders($orders);
+    }
+
+    /**
+     *  single order for service provide
+     */
+    public function showServiceProviderOrder($order){
+        $order = Order::findOrFail($order);
+        return view('orders.show-service-provider-order')->withOrder($order);
     }
 
     /**
@@ -89,6 +109,35 @@ class OrdersController extends Controller
             ]
         ]);
             
+        Session::flash('success', 'Thanks for leaving a review your order is completed successfully');
+        return redirect()->back();
+    }
+
+
+    /**
+     * 
+     * 
+     * mark order  cancel
+     */
+    public function markCancel(Request $request, $orderId){
+        $request->validate([
+            'cancellation_reason' => 'required',
+        ]);
+        $order = Order::findOrFail($orderId);
+        $order->status = 'Cancelled';
+        $order->cancellation_reason = $request->cancellation_reason;
+        $order->save();
+
+        $serviceProvider = User::findOrFail($order->service_provider_id);
+
+        $serviceProvider->notifications()->create([
+            'data' => [
+                'message' => auth()->user()->name . ' has cancelled an order',
+                'type' => 5,
+                'order_id' => $order->id
+            ]
+        ]);
+
         Session::flash('success', 'Thanks for leaving a review your order is completed successfully');
         return redirect()->back();
     }

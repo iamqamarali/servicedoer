@@ -45,7 +45,7 @@
                             <div class="trainers">
                                 <div class="row">
                                 <div class="col-md-4">
-                                    <img src="/images/trainer.png" alt="trainer" class="profile-img">
+                                    <img src="{{ $user->profile_image }}" alt="trainer" class="profile-img">
                                 </div>
                                 <div class="col-md-7">
                                     <h2>{{ $user->name }}</h2>
