@@ -33,7 +33,16 @@ class ProjectsController extends Controller
         Session::flash('success', "Your request has been taken here are the best matching results for your project");
         Session::put('project', $project->id);
         $url = url()->previous();
-        return redirect($url.'?project='.$project->id);
+        $urlArray = explode('/', $url);
+
+        $service = $urlArray[count($urlArray) -1];
+        $city = $urlArray[count($urlArray) -2];
+        if($service == ''){
+            $service = $urlArray[count($urlArray) -2];
+            $city = $urlArray[count($urlArray) -3];
+        }
+
+        return redirect()->route('bestserviceprovider', [$city, $service, $project->id]);
     }
 
 

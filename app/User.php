@@ -199,7 +199,7 @@ class User extends Authenticatable
      * get Attributes
      */
     public function getNameAttribute(){
-        return $this->first_name . ' ' . $this->last_name;
+        return ucwords($this->first_name . ' ' . $this->last_name);
     }
 
 

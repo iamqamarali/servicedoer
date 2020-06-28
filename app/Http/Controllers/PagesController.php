@@ -25,59 +25,62 @@ class PagesController extends Controller
      * 
      */
     public function serviceProviders(Request $request, $city, $service){
-
-        $page = $request->query('page') ? $request->query('page') : 1;
-        $page--;
-        $limit = 10;
-
-        if($request->query('project')){
-            $project = Project::find($request->project);
-            // fetch users
-            $users = User::raw(function($collection)use ($project, $page, $limit){
-                return $collection->aggregate([
-                [
-
-                    '$addFields' => [
-                        "matching" =>[
-                            '$setIntersection' => ['$answer_ids', $project->answer_ids]
-                        ]
-                    ]
-                ], 
-                [
-                    '$match'=>[
-                        'matching' => [
-                            '$ne' => null
-                        ]
-                    ]
-                ],
-                [
-                    '$addFields'=>[
-                        'count' =>[
-                            '$size' => '$matching'
-                        ]
-                    ]
-                ],
-                [
-                    '$sort' => [
-                        "count" => -1
-                    ]
-                ], 
-                [
-                    '$skip' => $page * $limit
-                ],
-                [
-                    '$limit' => $limit
-                ]
-                ]);
-            });
-        }else{
-            $users = User::where('service_id', $service)->where('city_id', $city)->skip($page*$limit)->limit($limit)->get();
-        }
+        $users = User::where('service_id', $service)->where('city_id', $city)->paginate(20);
         $service = Service::findOrFail($service);
         return view('service-providers')
                 ->withUsers($users)
                 ->withService($service)
                 ->withQuestions($service->questions()->with("answers")->get());
+    }
+
+    /**
+     * 
+     */
+    public function bestServiceProvider(Request $request, $city, $service, $project){
+        $project = Project::find($project);
+        // fetch users
+        $provider = User::raw(function($collection)use ($project, $city, $service){
+            return $collection->aggregate([
+            [
+
+                '$addFields' => [
+                    "matching" =>[
+                        '$setIntersection' => ['$answer_ids', $project->answer_ids]
+                    ]
+                ]
+            ], 
+            [
+                '$match'=>[
+                    'matching' => [
+                        '$ne' => null
+                    ]
+                ]
+            ],
+            [
+                '$match'=>[
+                    'city_id' => $city,
+                    'service_id' => $service
+                ]
+            ],
+            [
+                '$addFields'=>[
+                    'count' =>[
+                        '$size' => '$matching'
+                    ]
+                ]
+            ],
+            [
+                '$sort' => [
+                    "count" => -1
+                ]
+            ], 
+            [
+                '$limit' => 1
+            ]
+            ]);
+        });
+
+        return view('best-provider')->withProvider($provider[0]);
     }
 
     /**

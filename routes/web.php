@@ -17,10 +17,15 @@ Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/register/service-provider', 'Auth\RegisterController@registerServiceProviderForm');
 Route::post('/register/service-provider', 'Auth\RegisterController@registerServiceProvider');
 
-Route::group(['middleware' => ['auth', 'check-complete-profile'] ] , function(){
+Route::group(['middleware' => ['check-complete-profile'] ] , function(){
     Route::get('/', 'PagesController@home');
     Route::get('/service-providers/{service}', 'PagesController@serviceProviderByService');
     Route::get('/service-providers/{city}/{service}', 'PagesController@serviceProviders');
+});
+
+Route::group(['middleware' => ['auth', 'check-complete-profile']], function(){
+    Route::get('/service-providers/{city}/{service}/{project}', 'PagesController@bestServiceProvider')->name('bestserviceprovider');
+
     Route::get('/profile/{serviceProvider}', 'PagesController@serviceProviderProfile')->name('service-provider.profile');
 
     Route::post('/givequote/project/{project}', 'QuoteController@giveQuote')->name('give-quote');
@@ -40,7 +45,6 @@ Route::group(['middleware' => ['auth', 'check-complete-profile'] ] , function(){
     Route::post('/orders/{order}/mark-cancel', 'OrdersController@markCancel');
     Route::get('/orders', 'OrdersController@index');
     Route::get('/customer/profile/{customer}', 'Customer\ProfileController@customerProfile')->name('customer.profile');
-
 });
 
 
