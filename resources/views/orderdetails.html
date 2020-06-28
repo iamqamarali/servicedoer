@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar-bg navbar navbar-inverse navbar-inverse2" id="main-navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><p class="logo">Servicedoer</p></a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="menu-items"><a href="#" class="act-link order-link">Orders</a></li>
+                            <li class="menu-items"><a href="#" class="act-link order-link">Notifications<span class="notif-icon"><i class="fas fa-circle"></i></span></a></li>
+                            <li class="menu-items menu-items2 dropdown">
+                                <img src="images/manager.png" class="manager" />
+                                <h4  class="customer-profile">
+                                    Laim parker
+                                </h4>
+                                <a class="dropdown-toggle toggle2" data-toggle="dropdown" href="#"> <i class="fas fa-sort-down sort-down2"></i></a>
+                                <ul class="dropdown-menu menu2">
+                                    <li><a href="#" class="drop-down">Dashboard</a></li>
+                                    <li><a href="#" class="drop-down">Sign Out</a></li>
+                                </ul>
+                            </li>
+
+                            <!-- <li class="menu-items"><a href="register.html" class="act-link">Sign Up</a></li>
+                            <li class="menu-items"><a href="login.html" class="act-link">Login in</a></li>				 -->
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </header>
+        <section id="orders">
+            <div class="container">
+                <div class="row">
+                    <h3 class="active-order">Order Details</h3>
+                </div>
+                <div class="row active-row active-row2">
+                    <div class="col-md-5 customer-profile2">
+                       <h4 class="order-id">Order #FO41192E10026</h4>
+                       <p>Buyer:&nbsp; Laim Parker&nbsp;&nbsp;&nbsp;<a href="#" class="order-profile">View Profile</a></p>
+                       <p class="order-location"><i class="fas fa-map-marker-alt map-sign map-sign2"></i> Sector D Lahore,Pakistan</p>
+                    </div>
+                    <div class="col-md-3 text-center things">
+                        <h4>Things to be done</h4>
+                        Teach Maths
+                    </div>
+                    <div class="col-md-2 text-center status2">
+                        <h4>Status</h4>
+                        <span class="progress">In progress</span>
+                    </div>
+                    <div class="col-md-2 text-center order-price">Rs.300</div>
+                   
+                </div>
+                <hr class="order-border"/>
+                <div class="row order-subjects">
+                    <div class="col-md-6">
+                        <h4 class="order-id">For Which Subject are you looking for?</h4>
+                        <p class="order-subject2">Maths</p>
+                        <p class="order-subject2">Physics</p>
+                    </div>
+                    <div class="col-md-6"></div>
+                </div>
+                <div class="row order-subjects">
+                        <div class="col-md-6">
+                            <h4 class="order-id">Which gender you prefer?</h4>
+                            <p class="order-subject2">Male</p>
+                        </div>
+                        <div class="col-md-6"></div>
+                </div>
+                <div class="row order-subjects">
+                        <div class="col-md-6">
+                            <h4 class="order-id">For Which class are you searching a maths tutor?</h4>
+                            <p class="order-subject2">O levels</p>
+                        </div>
+                        <div class="col-md-6"></div>
+                </div>
+                <div class="row order-subjects">
+                        <div class="col-md-6">
+                            <h4 class="order-id">For how many months searching a maths tutor?</h4>
+                            <p class="order-subject2">1-2 months</p>
+                        </div>
+                        <div class="col-md-6"></div>
+                </div>
+                <hr class="order-border2"/>
+                <div class="row">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-2">
+                        <h4 class="total-price">Total&nbsp;&nbsp;&nbsp;Rs.300</h4>
+                    </div>
+
+                </div>
+                
+                
+            </div>
+        </section>
+        
+
+        <!-- JQUERY -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js"></script>
+    </body>
+</html>

@@ -92,6 +92,12 @@ class QuoteController extends Controller
         $request->validate([
             'quote' => 'required|numeric'
         ]);
+        $provider = auth()->user();
+        if($provider->connects <= 0){
+            Session::flash('You do not have connects left to quote this customer');
+        }
+        $provider->connects = $provider->connects - 1;
+        $provider->save();
         $quote = Quote::create([
             'quote' => $request->quote,
             'service_provider_id' => auth()->user()->id,

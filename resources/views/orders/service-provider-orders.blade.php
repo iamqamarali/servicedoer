@@ -15,10 +15,12 @@
                 <div class="col-md-3 customer-profile2">
                     <div class="row">
                         <div class="col-md-3 text-center customer-profile2">
-                            <img src="images/manager.png" alt="customer" class="customer" />
+                        <img src="{{ $order->customer->profile_image }}" alt="customer" class="customer" />
                         </div>
                         <div class="col-md-9 customer-info">
-                            <h4>{{ $order->service_provider->name }}</h4>
+                            <a href="{{ route('customer.profile', $order->customer->id) }}">
+                                <h4>{{ $order->service_provider->name }}</h4>
+                            </a>
                             <i class="fas fa-map-marker-alt map-sign"></i> {{ $order->service_provider->address }}  {{ $order->service_provider->city->name }}
                         </div>
                     </div>

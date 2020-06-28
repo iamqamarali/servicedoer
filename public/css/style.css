@@ -1808,3 +1808,83 @@ label.select-box:after{
 #cancelorder{
   margin-top:40px;
 }
+
+
+/* ORDER DETAILS PAGE */
+.active-row2{
+  border:0 !important;
+  }
+  .order-border{
+  width: 1100px;
+  border: 1px solid #eee;
+  }
+  .order-price{
+  font-size:30px;
+  margin-top:15px;
+  }
+  .order-id{
+  color:black;
+  font-size:20px;
+  }
+  .order-profile{
+  color:red;
+  text-decoration:none;
+  font-size:11px;
+  }
+  .order-profile:hover,.order-profile:focus{
+  color:red;
+  text-decoration:none;
+  font-size:11px;
+  }
+  .order-location{
+  font-size:12px;
+  margin-left:45px;
+  }
+  .map-sign2{
+  font-size:13px !important;
+  margin-right:1px !important;
+  }
+  .order-subjects{
+  padding:25px;
+  padding-bottom:0;
+  margin-bottom:0;
+  margin-top:-20px;
+  }
+  .order-subject{
+  color:gray;
+  margin-bottom:2px;
+  }
+  .order-subject2{
+  color:gray;
+  margin-bottom:2px;
+  font-size:17px;
+  }
+  .order-border2{
+  width: 1100px;
+  border: 1px solid #eee;
+  margin-top:24px;
+  }
+  .total-price{
+  font-size:22px;
+  margin-top:-6px;
+  color:black;
+  }
+  .customer-profile2{
+  margin-bottom:20px;
+  }
+  @media screen and (max-width:991px){
+  .customer-profile2{
+  text-align:center;
+  }
+  .total-price{
+  text-align:center;
+  }
+  }
+  @media screen and (max-width:1199px){
+  .order-border{
+  width:inherit !important;
+  }
+  .order-border2{
+    width:inherit !important;
+    }
+  }

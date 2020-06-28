@@ -17,7 +17,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/register/service-provider', 'Auth\RegisterController@registerServiceProviderForm');
 Route::post('/register/service-provider', 'Auth\RegisterController@registerServiceProvider');
 
-Route::group(['middleware' => 'check-complete-profile' ] , function(){
+Route::group(['middleware' => ['auth', 'check-complete-profile'] ] , function(){
     Route::get('/', 'PagesController@home');
     Route::get('/service-providers/{service}', 'PagesController@serviceProviderByService');
     Route::get('/service-providers/{city}/{service}', 'PagesController@serviceProviders');
@@ -27,6 +27,20 @@ Route::group(['middleware' => 'check-complete-profile' ] , function(){
     Route::get('/service-provider/orders', 'OrdersController@serviceProviderOrders');
 
     Route::get('/service-provider/orders/{order}', 'OrdersController@showServiceProviderOrder');
+
+    // customer
+    Route::post('/create-project', 'ProjectsController@create');
+    Route::post('/requestquote/{provider}/{project}', 'QuoteController@requestQuote')->name('request-quote');
+    Route::post('/create-project/requestquote/{provider}', 'QuoteController@createProjectRequestQuote');
+
+    Route::post('/orders/{quote}', 'OrdersController@orderQuote')->name('order-quote');
+    Route::get('/orders/{Order}' , 'OrdersController@show')->name('customer.orders.show');
+    Route::post('/orders/{order}/mark-complete', 'OrdersController@markComplete');
+
+    Route::post('/orders/{order}/mark-cancel', 'OrdersController@markCancel');
+    Route::get('/orders', 'OrdersController@index');
+    Route::get('/customer/profile/{customer}', 'Customer\ProfileController@customerProfile')->name('customer.profile');
+
 });
 
 
@@ -43,17 +57,9 @@ Route::middleware(['auth', 'user-type:service-provider'])->group(function(){
 
 // customer routes
 Route::middleware('auth')->middleware('user-type:customer')->group(function(){
-    Route::get('/project/c/{}', 'ProjectsController@showForCustomer');
-    Route::post('/create-project', 'ProjectsController@create');
-    Route::post('/requestquote/{provider}/{project}', 'QuoteController@requestQuote')->name('request-quote');
-    Route::post('/create-project/requestquote/{provider}', 'QuoteController@createProjectRequestQuote');
+    Route::get('/customer/complete-profile/step2', 'PagesController@customerCompleteProfileStep2');
+    Route::post('/customer/complete-profile/step2', 'Customer\ProfileController@completeProfile');
 
-    Route::post('/orders/{quote}', 'OrdersController@orderQuote')->name('order-quote');
-    Route::get('/orders/{Order}' , 'OrdersController@show');
-    Route::post('/orders/{order}/mark-complete', 'OrdersController@markComplete');
-
-    Route::post('/orders/{order}/mark-cancel', 'OrdersController@markCancel');
-    Route::get('/orders', 'OrdersController@index');
 });
 
 
@@ -71,6 +77,7 @@ Route::prefix('/api')->group(function(){
     
     // reviews
     Route::get('/reviews/{serviceProvider}', 'ReviewsController@index');
+    Route::get('/reviews/{review}/show', 'ReviewsController@showApi');
 
     // projects
     Route::get('/projects/{project}', 'ProjectsController@show');

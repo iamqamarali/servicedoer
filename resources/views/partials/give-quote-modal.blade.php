@@ -6,7 +6,7 @@
         </div>
         <div class="modal-body">
 
-            <h3>Quote request by <span class="customer-name"></span></h3>
+            <h3>Quote request From <span class="customer-name"></span></h3>
             <br>
 
             <div class="project-description">

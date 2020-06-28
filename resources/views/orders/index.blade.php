@@ -18,7 +18,9 @@
                             <img src="images/manager.png" alt="customer" class="customer" />
                         </div>
                         <div class="col-md-9 customer-info">
-                            <h4>{{ $order->service_provider->name }}</h4>
+                            <a href="{{ route('service-provider.profile', $order->service_provider->id) }}">
+                                <h4>{{ $order->service_provider->name }}</h4>
+                            </a>
                             <i class="fas fa-map-marker-alt map-sign"></i> {{ $order->service_provider->address }}  {{ $order->service_provider->city->name }}
                         </div>
                     </div>

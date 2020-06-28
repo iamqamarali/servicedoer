@@ -20,7 +20,7 @@ class OrdersController extends Controller
             'customer_id' => $quote->customer_id,
             'project_id' => $quote->project_id
         ]);
-        return redirect('/orders/'. $order->id);
+        return redirect()->route('customer.orders.show', $order->id);
     }
 
 
@@ -40,7 +40,7 @@ class OrdersController extends Controller
      * 
      */
     public function show($order){
-        $order = Order::findOrFail($order);
+        $order = Order::with('project')->findOrFail($order);
         return view('orders.show')->withOrder($order);
     }
 
@@ -59,7 +59,7 @@ class OrdersController extends Controller
      *  single order for service provide
      */
     public function showServiceProviderOrder($order){
-        $order = Order::findOrFail($order);
+        $order = Order::with('project')->findOrFail($order);
         return view('orders.show-service-provider-order')->withOrder($order);
     }
 
@@ -79,6 +79,7 @@ class OrdersController extends Controller
         $review = Review::create([
             'rating' => $request->rating,
             'review' => $request->review,
+            'order_id' => $order->id
         ]);
         $review->customer()->associate(auth()->user()->id);
         $review->service_provider()->associate($order->service_provider_id);

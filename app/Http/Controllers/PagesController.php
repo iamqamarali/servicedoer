@@ -129,4 +129,15 @@ class PagesController extends Controller
                 ->withPackages(SubscriptionPackage::all());
     }
 
+
+    /**
+     * 
+     * 
+     */
+    public function customerCompleteProfileStep2(){
+        return view('customer.complete-profile.step2')
+                ->withCities(City::all());
+    }
+
+
 }

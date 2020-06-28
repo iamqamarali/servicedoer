@@ -8,7 +8,7 @@
             </button>
         </div>
         <div class="modal-body">
-            <h3>Quote request by <span class="service-provider-name"></span></h3>
+            <h3>Quote Sent by <a href="" class="service-provider-name"></a></h3>
             <br>
 
             <div class="project-description">

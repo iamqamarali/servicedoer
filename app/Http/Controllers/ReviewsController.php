@@ -10,7 +10,8 @@ class ReviewsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth:api', 'type:customer'])->except('index');
+        $this->middleware(['auth:api', 'type:customer'])->except(['index', 'showApi']);
+        $this->middleware(['auth:api'])->except(['showApi']);
     }
 
 
@@ -50,6 +51,12 @@ class ReviewsController extends Controller
         ]);
 
         return $review;
+    }
+
+
+
+    public function showApi($review){
+        return  Review::with('customer')->with('service_provider')->findOrFail($review);        
     }
 
 }

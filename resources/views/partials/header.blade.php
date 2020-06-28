@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><p class="logo">Servicedoer</p></a>
+                <a class="navbar-brand" href="/"><p class="logo">Servicedoer</p></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -79,6 +79,9 @@
                                 @if (auth()->user()->type == 'service-provider')    
                                     <li><a href="{{ route('service-provider.profile', auth()->user()->id ) }}" class="drop-down">Account</a></li>                                    
                                 @endif
+                                @if (auth()->user()->type == 'customer')    
+                                    <li><a href="{{ route('customer.profile', auth()->user()->id ) }}" class="drop-down">Account</a></li>
+                                @endif
                                 <li><a href="/logout" class="drop-down">Sign Out</a></li>
                             </ul>
                         </li>
@@ -101,6 +104,7 @@
 
 @include('partials.give-quote-modal')
 @include('partials.order-quote-modal')
+@include('partials.show-review-modal')
 
 
 @push('scripts')

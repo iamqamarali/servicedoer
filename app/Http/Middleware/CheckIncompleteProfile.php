@@ -26,6 +26,12 @@ class CheckIncompleteProfile
                     }
                 }
             }
+
+            if(auth()->user()->type == 'customer'){
+                if(auth()->user()->incomplete_profile){
+                    return redirect('/customer/complete-profile/step2');
+                }
+            }
         }
         return $next($request);
     }
