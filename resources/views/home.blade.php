@@ -37,139 +37,150 @@
         </div>
     </div>
 </section>
-
-@include('partials.messages')
-
-<section id="guarantee">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-1"></div>
-           <div class="col-md-5">
-             <div class="guarantee-text">
-               <h2 class="guarantee-heading">The ServiceDoer Guarantee</h2>
-               <p class="guarantee-para">If the job isn't done as agreed,you can get your money back.And if there's property damage,<br/>you're protected</p>
-             </div>
-            </div>
-           <div class="col-md-5 text-center">
-               <img src="images/Untitled-1.png" alt="guarantee" class="guarantee-img">
-           </div>
-           <div class="col-md-1"></div>
-        </div>
-    </div>
-</section>
-<section id="photography">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2 class="services-heading">Photography</h2>
+        <section id="top-rated-services">
+            <div class="container rated-services">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="services-heading">Top Rated Services</h2>
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4"></div>
                 </div>
-                <div class="col-md-4"></div>
-                <div class="col-md-4"></div>
+                <div class="row services-rated">
+                   <div class="col-md-4">
+                       <img src="images/service1.jpg" alt="house-cleaning" class="services-img">
+                       <h4>Full House Cleaning<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                   </div>
+                   <div class="col-md-4">
+                    <img src="images/electricianimg.jpg" alt="Electrician" class="services-img">
+                    <h4>Electrician<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i>Look for doers</span></h4>
+                  </div>
+                  <div class="col-md-4">
+                    <img src="images/service3.jpg" alt="laundry" class="services-img">
+                    <h4>Laundry<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i>Look for doers</span></h4>
+                </div>
+                </div>
             </div>
-            <div class="row">
-               <div class="col-md-4">
-                   <a href="/service-providers/{{ $photography->id }}">
-                        <img src="images/photo1.jpg" alt="couple shoot" class="services-img">
-                        <h4>Couple Shoot<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i>Look for doers</span></h4>
-                    </a>
-               </div>
-               <div class="col-md-4">
-                    <a href="/service-providers/{{ $photography->id }}">
+        </section>
+        @include('partials.messages')
+        <section id="guarantee">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1"></div>
+                   <div class="col-md-5">
+                     <div class="guarantee-text">
+                       <h2 class="guarantee-heading">The ServiceDoer Guarantee</h2>
+                       <p class="guarantee-para">If the job isn't done as agreed,you can get your money back.And if there's property damage,<br/>you're protected</p>
+                     </div>
+                    </div>
+                   <div class="col-md-5 text-center">
+                       <img src="images/Untitled-1.png" alt="guarantee" class="guarantee-img">
+                   </div>
+                   <div class="col-md-1"></div>
+                </div>
+            </div>
+        </section>
+        <section id="photography">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h2 class="services-heading">Photography &amp; Tutor</h2>
+                        </div>
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4"></div>
+                    </div>
+                    <div class="row">
+                       <div class="col-md-4">
+                           <img src="images/photo1.jpg" alt="couple shoot" class="services-img">
+                           <h4>Couple Shoot<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i>Look for doers</span></h4>
+                       </div>
+                       <div class="col-md-4">
                         <img src="images/photo2.jpg" alt="wedding shoot" class="services-img">
                         <h4>Wedding Shoot<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
-                    </a>
+                      </div>
+                      <div class="col-md-4">
+                        <img src="images/tutor.jpg" alt="Tutor" class="services-img">
+                        <h4>Tutor<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                    </div>
+                    </div>
                 </div>
-              <div class="col-md-4">
-                    <a href="/service-providers/{{ $photography->id }}">
-                        <img src="images/photo3.jpg" alt="party shoots" class="services-img">
-                        <h4>Party Shoots<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
-                    </a>
+        </section>
+        <section id="health-fitness">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h2 class="services-heading">Plumber &amp; Mechanic</h2>
+                        </div>
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4"></div>
+                    </div>
+                    <div class="row">
+                       <div class="col-md-4">
+                           <img src="images/mechanic.jpg" alt="Mechanic" class="services-img">
+                           <h4>Mechanic<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                       </div>
+                       <div class="col-md-4">
+                        <img src="images/generator.jpg" alt="Generator Repair" class="services-img">
+                        <h4>Generator Repairs<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                      </div>
+                      <div class="col-md-4">
+                        <img src="images/Plumber.jpg" alt="Plumber" class="services-img">
+                        <h4>Plumber<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                    </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-</section>
-<section id="health-fitness">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2 class="services-heading">Health &amp; Fitness</h2>
-                </div>
-                <div class="col-md-4"></div>
-                <div class="col-md-4"></div>
-            </div>
-            <div class="row">
-               <div class="col-md-4">
-                   <a href="/service-providers/{{ $yogaTrainer->id }}"></a>
-                        <img src="images/health1.jpg" alt="yoga trainer" class="services-img">
-                        <h4>Yoga Trainer<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
-                    </a>
-               </div>
-               <div class="col-md-4">
-                    <a href="/service-providers/{{ $personalTrainer->id }}"></a>
-                        <img src="images/health2.jpg" alt="personal trainer" class="services-img">
-                        <h4>Personal Trainer<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
-                    </a>
-                </div>
-              <div class="col-md-4">
-                    <a href="/service-providers/{{ $dietician->id }}"></a>
-                        <img src="images/health3.jpg" alt="physician" class="services-img">
-                        <h4>Dietician<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
-                    </a>
-                </div>
-            </div>
-        </div>
-</section>
-<section id="offering">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="offering-div">
-                    <h1 class="offering-heading">Offering more services for all customers</h1>
-                    <h3 class="offering-para">Fast and easily available services</h3>
+        </section>
+        <section id="offering">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="offering-div">
+                            <h1 class="offering-heading">Offering more services for all customers</h1>
+                            <h3 class="offering-para">Fast and easily available services</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section id="experts">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-               <img src="images/expert1.jpg" alt="ac repair" class="expert-img">
-               <h4>AC Repair<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
-            </div>
-            <div class="col-md-4">
-                    <img src="images/expert2.jpg" alt="ac repair" class="expert-img1">
-                    <h4>Carpenter<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
-            </div>
-            <div class="col-md-4">
-                    <img src="images/service2.jpg" alt="ac repair" class="expert-img2">
-                    <h4>Electrician<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-8 plumber">
-                <img src="images/expert5.jpg" alt="ac repair" class="expert-img3">
-                <h4>Plumber<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
-            </div>
+        </section>
+        <section id="experts">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                       <img src="images/watermeter.jpg" alt="water meter installation" class="expert-img">
+                       <h4>Water Meter Installation<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                    </div>
+                    <div class="col-md-4">
+                            <img src="images/bathtub.jpg" alt="Bath-tub Fitting" class="expert-img1">
+                            <h4>Bath-Tub Fitting<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                    </div>
+                    <div class="col-md-4">
+                            <img src="images/service2.jpg" alt="Electronic wiring" class="expert-img2">
+                            <h4>Electricial Wiring<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8 plumber">
+                        <img src="images/upsandinverter.jpg" alt="UPS Inverter repair" class="expert-img3">
+                        <h4>UPS & Inverter Replacement<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                    </div>
 
-        </div>
-    </div>
-</section>
-<section id="community">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-               <img src="images/community.png" alt="buy business" class="business-img">
+                </div>
             </div>
-            <div class="col-md-8">
-               <h1 class="buy-heading">Buy more business and Help Community.</h1>
-               <p class="buy-para">Whatever work you do,we'll find one for you.</p>
-               <button class="buy-btn">Become a servicedoer</button>
-            </div>
-        </div>
-</section>  
+        </section>
+        <section id="community">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                       <img src="images/community.png" alt="buy business" class="business-img">
+                    </div>
+                    <div class="col-md-8">
+                       <h1 class="buy-heading">Buy more business and Help Community.</h1>
+                       <p class="buy-para">Whatever work you do,we'll find one for you.</p>
+                       <button class="buy-btn">Become a servicedoer</button>
+                    </div>
+                </div>
+        </section>
 
 @endsection
           
