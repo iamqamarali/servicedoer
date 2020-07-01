@@ -307,7 +307,7 @@ input.check-box{
   /* REGISTER PAGE*/
   .navbar-brand{
     margin-top:15px !important;
-    padding:0px !important;
+    padding: 0px !important;
   }
   .navbar-inverse {
     background-color: transparent !important;
@@ -315,17 +315,15 @@ input.check-box{
     border:0 !important;
     border-bottom:1px solid lightgray !important;
 }
-.navbar-brand:before{
+/*.navbar-brand:before{
     content: "";
-    background: black;
     width: 45px;
     display: block;
     margin: 0 auto;
-    border: 1px solid black;
     height: 45px;
     position:relative;
     bottom:12px;
-}
+}*/
 .register-heading{
   text-align:center;
   margin-bottom:30px;
@@ -387,11 +385,13 @@ input.check-box{
   text-decoration:none !important;
 }
 .logo{
-    position:relative;
-    left:90px;
-    bottom:45px;
-    font-size:20px;
-    color:black;
+
+    position: relative;
+    width: 265px;
+    height: 50px;
+    bottom: 23px; 
+    left: -40px;
+   
 }
 .navbar-inverse .navbar-nav>li>a {
     color: #9d9d9d;
@@ -1160,24 +1160,21 @@ label.select-box:after{
 #community{
   margin-top:40px;
 }
-.footer-logo:before{
+/*.footer-logo:before{
   content: "";
-  background: black;
   width: 45px;
   display: block;
-  border: 1px solid black;
   height: 45px;
   position: relative;
   top: 35px;
   right: 90px;
   margin: 0 auto;
-}
+}*/
 .footer-logo{
-  position:relative;
-  left:90px;
+  position: relative;
+  left:0px;
   bottom:45px;
-  font-size:20px;
-  color:black;
+  font-size:10px;
   text-align:center;
 }
 #home-footer{

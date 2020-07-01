@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p class="footer-logo"><p class="logo"><img src="images/logo.png" alt="Servicedoer-logo" class="services-img"></p></p>
+                <p class="footer-logo"><img src="/images/logo1.png" alt="Servicedoer-logo" ></p>
             </div>
         </div>
         <div class="row service-para-row">

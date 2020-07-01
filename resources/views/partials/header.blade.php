@@ -9,7 +9,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><p class="logo"><img src="images/logo.png" alt="Servicedoer-logo" class="services-img"></p></a>
+                <a class="navbar-brand" href="/"></a>
+                <p class="logo"><img src="/images/logo1.png" alt="Servicedoer"> </p>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
