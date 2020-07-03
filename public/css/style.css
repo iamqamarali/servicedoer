@@ -21,12 +21,8 @@ html,body{
 }
 .fa-star{
   color:rgb(248, 217, 43);
-  margin-right:5px;
-  font-size:12px !important;
-}
-.stars{
-    margin-left:9px;
-    margin-right:9px;
+  margin:0 3px;
+  font-size:12px ;
 }
 .profile-img{
   width: 180px;
@@ -1560,9 +1556,13 @@ label.select-box:after{
 .most-recent{
   margin-top:15px;
 }
-.star2{
-  font-size:9px !important;
+.rating-info .star2{
+  font-size: 12px 
 }
+.rating-info .stars{
+  font-size: 12px 
+}
+
 
 /* REVIEW 2 PAGE */
 .service-provide1{
@@ -1756,11 +1756,11 @@ label.select-box:after{
  
 }
 .stars{
-  font-size:22px !important;
+  font-size:22px ;
   margin-top:10px !important;
 }
 .stars2{
-  font-size:22px !important;
+  font-size:22px ;
   margin-top:10px !important;
   margin-left:5px !important;
   color:lightgray !important;

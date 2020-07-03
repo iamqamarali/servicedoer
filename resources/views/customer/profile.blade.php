@@ -10,27 +10,22 @@
                   <img src="{{ $customer->profile_image }}" width="130" style="margin-top:15px" alt="reviewer">
                   <h3>{{ $customer->name }}</h3>
                   <p class="location1"><i class="fas fa-map-marker-alt alt2"></i> {{ $customer->address  }}   {{ $customer->city->name }}</p>   
+
+                  <div style="margin:10px 0">
+                    <b>Orders Completed : </b>
+                    {{ $orders->count() }}                      
+                  </div>
+                  <div style="margin:10px 0">
+                    <b>Money Spent : </b>
+                    {{ $orders->pluck('amount')->sum() }}                      
+                  </div>
+
               </div>
               <div class="reviewer-info info2">
                     <p class="bio-para">Bio<br/><span class="bio">{{ $customer->bio }}</span></p>
               </div>
+              
           </div>
-          {{-- <div class="col-md-8">
-              <h3>Reviews </h3>
-              @foreach ($reviews as $review)
-                <p class="customer-para">{{ $review->review }}</p>
-                <div class="row">
-                  <div class="col-md-4">
-                  <p class="rating">{{ $review->created_at->diffForHumans() }}</p>
-                  </div>
-                  <div class="col-md-2"></div>
-                  <div class="col-md-6">
-                    <p class="rating-info">-{{$review->customer->name}} &nbsp; {{$review->rating }} <i class="fas fa-star star2"></i><i class="fas fa-star star2"></i><i class="fas fa-star star2"></i><i class="fas fa-star star2"></i><i class="fas fa-star star2"></i></p>
-                  </div>
-                </div>
-              @endforeach   
-          </div> --}}
-
       </div>
   </div>
 </section>

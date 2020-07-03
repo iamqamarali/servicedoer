@@ -32,10 +32,11 @@
                 @endif
             </div>
             <div class="col-md-2 text-center order-price">Rs.{{ $order->amount }}</div>
-           
         </div>
-        <hr class="order-border"/>
         
+        <hr class="order-border"/>
+
+
         @foreach ($order->project->questions as $question)
             <div class="row order-subjects">
                 <div class="col-md-6">

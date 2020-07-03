@@ -7,7 +7,8 @@ use Jenssegers\Mongodb\Eloquent\Model;
 class Question extends Model
 {
     protected $fillable = [
-        'question', 
+        'question',
+        'service_provider_question',
         'type', // text, radio, checkbox
         'service_id'
     ];

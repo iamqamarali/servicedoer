@@ -14,16 +14,12 @@ class ServicesSeeder extends Seeder
     {
         Service::truncate();
         $services = [
-            'Maths Tutor',
-            'English Turor',
-            'Wedding Photographer',
-            'Event Photographer',
-            'Electrition',
-            'Computer Repair',
-            'Electronics Repairing',
-            'Yoga Trainer',
-            'Dietician',
-            'Personal Trainer'
+            'Tutor',
+            'Electrician',
+            'Plumber',
+            'Mechanic',
+            'Photography',
+            'Home Cleaning',
         ];
         foreach($services as $service){
             Service::create([

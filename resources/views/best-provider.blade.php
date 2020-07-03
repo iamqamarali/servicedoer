@@ -36,7 +36,7 @@
          <div class="col-md-1"></div>
          <div class="col-md-10">
            
-          <div id="map"></div>
+          <div id="map" style="height: 500px; width:800px"></div>
         </div>
          <div class="col-md-1"></div>
       </div>
@@ -49,10 +49,10 @@
 <script>
   var geocoder;
   var map;
-  var address = "new york city";
+  var address = "{{ $provider->address . ' ' . $provider->city->name . ' pakistan' }}";
   function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 8,
+      zoom: 13,
       center: {lat: -34.397, lng: 150.644}
     });
     geocoder = new google.maps.Geocoder();
@@ -75,6 +75,6 @@
 </script>
 
 <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3mZuUggAGBx7IQ-GV1eswAqrqV7gVUKg&callback=initMap">
 </script>
 @endpush

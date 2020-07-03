@@ -107,6 +107,7 @@ class PagesController extends Controller
         $provider = User::findOrFail($serviceProvider);
         return view('profile')
                 ->withProvider($provider)
+                ->withOrders($provider->service_provider_orders()->where('status', 'Completed')->get())
                 ->withReviews($provider->serviceProviderReviews()->paginate(5));
     }
 
@@ -128,7 +129,7 @@ class PagesController extends Controller
      * 
      */
     public function completeProfileStep3(){
-        return view('complete-profile.step3')
+        return view('customer.complete-profile.step3')
                 ->withPackages(SubscriptionPackage::all());
     }
 

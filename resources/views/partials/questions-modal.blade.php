@@ -16,7 +16,7 @@
                     </div>
                     <div class="row">
                           <form action="#" id="main-form">
-                                <p class="gender question">What sex are you looking for?</p>
+                                <p class="gender question"></p>
 
 
                                 <div class="answers">

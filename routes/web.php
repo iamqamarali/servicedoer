@@ -47,15 +47,14 @@ Route::group(['middleware' => ['auth', 'check-complete-profile']], function(){
     Route::get('/customer/profile/{customer}', 'Customer\ProfileController@customerProfile')->name('customer.profile');
 });
 
-
+ 
 // service provider routes
 Route::middleware(['auth', 'user-type:service-provider'])->group(function(){
     Route::get('/complete-profile/step2', 'PagesController@completeProfileStep2');
     Route::post('/complete-profile/step2', 'ServiceProviders\ProfileController@completeProfile');
 
     Route::get('/complete-profile/step3', 'PagesController@completeProfileStep3');
-    Route::get('/subscribe/{package}', 'SubscriptionController@subscribe');
-
+    Route::post('/subscription/subscribe', 'SubscriptionController@subscribe');
 });
 
 

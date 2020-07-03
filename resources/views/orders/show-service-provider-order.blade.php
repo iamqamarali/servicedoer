@@ -28,10 +28,26 @@
                 @endif
             </div>
             <div class="col-md-2 text-center order-price">Rs.{{ $order->amount }}</div>
-           
         </div>
+
+        <div class="text-center">
+            @if ($order->status == 'Cancelled')
+                <div class="project-cancellation-reason">
+                    <h4  >Project Cancellation Reason</h4>
+                    <p>{{ $order->cancellation_reason }}</p>
+                </div>
+            @endif
+        </div>
+
         <hr class="order-border"/>
-        
+
+        <div class="row order-subjects">
+            <div class="col-md-6">
+                <h3><b>Project Description</b></h3>
+                <br>
+            </div>    
+        </div>    
+
         @foreach ($order->project->questions as $question)
             <div class="row order-subjects">
                 <div class="col-md-6">

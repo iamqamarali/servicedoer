@@ -16,6 +16,7 @@ class ProfileController extends Controller
     public function customerProfile($customer){
         $customer = User::findOrFail($customer);
         return view('customer.profile')
+                ->withOrders($customer->customer_orders()->where('status', 'Completed')->get())
                 ->withCustomer($customer);
     }
 

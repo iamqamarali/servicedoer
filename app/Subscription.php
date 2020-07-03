@@ -10,7 +10,7 @@ class Subscription extends Model
         'status',
         'package_id',
         'trial_till_date',
-        'payment_id',
+        'stripe_charge_id'
     ];
 
     protected $casts = [

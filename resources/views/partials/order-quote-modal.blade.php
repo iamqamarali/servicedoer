@@ -1,34 +1,38 @@
 <!--  give quote modal -->
 <div class="modal fade" id="order-quote-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <h3>Quote Sent by <a href="" class="service-provider-name"></a></h3>
-            <br>
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-inner-box">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
 
-            <div class="project-description">
+                    <h3 class="modal-heading">Quote Sent by <a href="" class="service-provider-name"></a></h3>
+                    <hr>
+
+                    <h3 class="project-description-heading" style="margin: 10px 0 30px; font-size: 1.5em">Project Description</h3>
+                    <div class="project-description">
+                    </div>
+                    
+                    <br>
+
+                    <div>
+                        <span class="service-provider-name"></span> has asked for the following price for your requirements
+                    </div>
+                    <div>
+                        <b>Quote Price: </b>  <span class="quote-price"></span>            
+                    </div>
+
+                    <form action="" class="order-quote-form d-none" method="post">
+                        @csrf
+                        <input type="button" class="continue continue-btn order-quote-form-submit-button" value="Accept Quote">
+                        <input type="button" class="continue continue-btn " data-dismiss="modal"  value="Cancel">
+                    </form>    
+                </div>
+
             </div>
- 
-            <h4>
-                <b>
-                    <span class="service-provider-name"></span> has asked for the following price for your work.
-                </b>
-            </h4>
-            <span class="quote-price"></span>            
-
-            <form action="" class="order-quote-form d-none" method="post">
-                @csrf
-                <input type="button" class="continue continue-btn order-quote-form-submit-button" value="Accept Quote">
-                <input type="button" class="continue continue-btn " data-dismiss="modal"  value="Cancel">
-            </form>    
-
         </div>
-    </div>
     </div>
 </div>
 
@@ -56,6 +60,7 @@
                         var $pd = $('.project-description');
                         $pd.html('');
                         $('.service-provider-name').html(quote.service_provider.first_name + ' ' + quote.service_provider.last_name);
+                        $('.service-provider-name').attr('href', '/profile/' + quote.service_provider._id );
                         $('.quote-price').html(quote.quote)
                         quote.project.questions.forEach(function(q){
                             var $question = $('<div class="question"><h5 class="question-text"><b>'+q.question+'</b></h5></div><br>')

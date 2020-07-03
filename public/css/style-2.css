@@ -114,4 +114,11 @@
     background-color: #f2f2f2;
   }
   
+.stars-container{
+  display: inline-block;
+}
   
+/**/
+.modal-inner-box{
+  padding: 30px;
+}

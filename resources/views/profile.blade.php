@@ -27,6 +27,16 @@
                         </div>
                       @endif
                     @endauth                      
+
+                    <div style="margin:10px 0">
+                      <b>Orders Completed : </b>
+                      {{ $orders->count() }}                      
+                    </div>
+                    <div style="margin:10px 0">
+                      <b>Money Earned : </b>
+                      {{ $orders->pluck('amount')->sum() }}                      
+                    </div>
+
                  </div>
    
               </div>
@@ -46,7 +56,11 @@
                   </div>
                   <div class="col-md-2"></div>
                   <div class="col-md-6">
-                    <p class="rating-info">-{{$review->customer->name}} &nbsp; {{$review->rating }} <i class="fas fa-star star2"></i><i class="fas fa-star star2"></i><i class="fas fa-star star2"></i><i class="fas fa-star star2"></i><i class="fas fa-star star2"></i></p>
+                    <p class="rating-info">- <a href="/customer/profile/{{ $review->customer->id }}">{{$review->customer->name}}</a> &nbsp; {{$review->rating }}
+                        @for ($i = 0; $i < $review->rating ;$i++)
+                          <i class="fas fa-star star2"></i>
+                        @endfor
+                      </p>
                   </div>
                 </div>
               @endforeach   
