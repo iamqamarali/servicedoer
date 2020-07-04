@@ -1303,12 +1303,7 @@ label.select-box:after{
 .testimonial2{
   font-size:15px;
 }
-.trainers{
-  margin-bottom:30px;
-}
-.trainers2{
-  margin-bottom:30px;
-}
+
 @media screen and (max-width:361px){
   .button-div{
     float: right;

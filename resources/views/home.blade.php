@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-6">
                 <h1 class="slider-heading">Find Local professional for pretty much for everything.</h1>
-                <div class="row">
+                <div class="row no-gutters"> 
                     <div class="col-md-4">
                         <label class="select-box">
                            <select class="form-control form-input location-input city-select">
@@ -19,7 +19,7 @@
                            </select>
                         </label>   
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <div class="autocomplete-search services-autocomplete-search">
                             <div class="autocomplete-input-wrapper">
                                 <input type="text" class="form-control form-input autocomplete-input services-search-input" placeholder="Hire a pro for service">
@@ -27,6 +27,8 @@
                             <div class="autocomplete-suggestions">
                             </div>
                         </div>
+                    </div>
+                    <div class="col-md-2">
                         <input type="button" value="Search" class="service-btn service-provider-search-btn">
                     </div>
                 </div>
@@ -177,7 +179,7 @@
                     <div class="col-md-8">
                        <h1 class="buy-heading">Buy more business and Help Community.</h1>
                        <p class="buy-para">Whatever work you do,we'll find one for you.</p>
-                       <button class="buy-btn">Become a servicedoer</button>
+                       <a href="/register/service-provider" class="buy-btn">Become a servicedoer</a>
                     </div>
                 </div>
         </section>

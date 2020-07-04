@@ -6,6 +6,7 @@ use App\Subscription;
 use App\SubscriptionPackage;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class SubscriptionController extends Controller
 {
@@ -42,6 +43,8 @@ class SubscriptionController extends Controller
         $user->save(); 
         $user->unset('incomplete_profile');
         $user->unset('incomplete_profile_step');
+
+        Session::flash('success',  "You've been successfully subscribed to " . $package->name . ". You can now get quote requests from customers" );
 
         return redirect()->route('service-provider.profile', $user->id);
     }

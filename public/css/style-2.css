@@ -1,3 +1,88 @@
+
+/********   home page ******/
+.autocomplete-search{
+    position: relative;
+    margin-right: 25px;
+}
+  
+  .autocomplete-input-wrapper{
+    position: relative;
+    z-index: 100;
+    flex: 1;
+  }
+  
+  .autocomplete-input{
+  
+  }
+  .autocomplete-suggestions{
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #f2f2f2;
+    border-top: 0;
+  }
+  .autocomplete-suggestion{
+    text-align: left;
+    background-color: white;
+    padding: 15px 10px;
+    font-size: .9em;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+  }
+  .autocomplete-suggestion:hover{
+    background-color: #f2f2f2;
+  }
+.service-provider-search-btn{
+  display: inline-block;
+  height: 49px;
+}
+  
+.stars-container{
+  display: inline-block;
+}
+  
+
+/************   modal ***********/
+.modal-inner-box{
+  padding: 30px;
+}
+
+
+
+
+/*  header*/
+
+.site-header .logo{
+}
+.user-dropdown .dropdown-toggle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.user-dropdown .dropdown-toggle h4{
+  margin: 0 10px;
+}
+.header .nav-item .nav-link:hover{
+  color: black;
+}
+.header .user-dropdown{
+  margin-top: -8px
+}
+.header .user-img{
+  width: 40px;
+  height: 40px;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+}
+
+
+/* listing-page */
+
 .trainer-gender{
   width:100%;
   margin-bottom:15px;
@@ -63,62 +148,64 @@
   -webkit-appearance:none;
   line-height: 40px;
 }
-
-
-.user-dropdown .dropdown-toggle{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.single-provider{
+  padding: 30px!important;
 }
-.user-dropdown .dropdown-toggle h4{
-  margin: 0 10px;
+.single-provider + .single-provider{
+  border-top: 1px solid #eee;
 }
-.header .nav-item .nav-link:hover{
-  color: black;
+.single-provider .provider-dp {
+  width: 160px;
+  height: 160px;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin-left: 60px;
+}
+.single-provider .view-profile-btn{
+  margin-top: 10px;
+  margin-right: -5px;
+  float: right;
 }
 
 
 
-.autocomplete-search{
-    position: relative;
-  }
-  
-  .autocomplete-input-wrapper{
-    position: relative;
-    z-index: 100;
-    flex: 1;
-  }
-  
-  .autocomplete-input{
-  
-  }
-  .autocomplete-suggestions{
-    position: absolute;
-    z-index: 100;
-    top: 100%;
-    left: 0;
-    right: 0;
-    border: 1px solid #f2f2f2;
-    border-top: 0;
-  }
-  .autocomplete-suggestion{
-    text-align: left;
-    background-color: white;
-    padding: 15px 10px;
-    font-size: .9em;
-    font-weight: 500;
-    cursor: pointer;
-    user-select: none;
-  }
-  .autocomplete-suggestion:hover{
-    background-color: #f2f2f2;
-  }
-  
-.stars-container{
-  display: inline-block;
+
+/***************  footer  *******************/
+#home-footer{
+  padding-top: 70px;
+  border-top: 1px solid #eee;
 }
-  
-/**/
-.modal-inner-box{
-  padding: 30px;
+
+
+/*****************  service provider profile page  **********************/
+.customer-profile-page .profile-pic,
+.service-provider-profile-page .profile-pic{
+  width: 160px;
+  height: 160px;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin-left: 90px; 
+}
+.service-provider-profile-page .get-quote{
+  margin-right: 0;
+}
+.reviewer-info{
+  padding: 40px
+}
+.reviewer-info .bio{
+  display: block;
+  margin-top: 10px;
+}
+
+
+
+
+/*************  Best provider page  ****************/
+#map{
+  width: 100%;
+  height: 500px;
 }

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<section id="review">
+<section id="review" class="service-provider-profile-page">
   <div class="container">
     @include('partials.messages')
       <div class="row">
           <div class="col-md-4">
-              <div class="reviewer-div text-center">
-                  <img src="{{ $provider->profile_image }}" width="130" style="margin-top:15px" alt="reviewer">
+              <div class="reviewer-div text-center left-box">
+                  <div class="profile-pic" style="background-image:url({{ $provider->profile_image }})" ></div>
                   <h3>{{ $provider->name }}</h3>
                   <p class="location1"><i class="fas fa-map-marker-alt alt2"></i> {{ $provider->address  }}   {{ $provider->city->name }}</p>
                   <div class="review-buttons">
@@ -40,7 +40,7 @@
                  </div>
    
               </div>
-              <div class="reviewer-info info2">
+              <div class="reviewer-info info2 left-box">
                     <p class="bio-para">Bio<br/><span class="bio">{{ $provider->bio }}</span></p>
                     <p class="service-providers">Provide Services</p>
                     <p class="service-provide1">{{ $provider->service->name }}</p>
@@ -83,12 +83,11 @@
       <div class="modal-body">
           <div class="trainer-box"> 
             <div class="row let-us">
-                <h3>Let us help you find a better service provider</h3>
+                <h3>Please choose your requirements</h3>
             </div>
             <div class="row">
                   <form action="#" id="main-form">
-                        <p class="gender question">What sex are you looking for?</p>
-
+                        <p class="gender question"></p>
 
                         <div class="answers">
             

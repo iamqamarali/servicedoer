@@ -1,4 +1,4 @@
-<header>
+<header class="site-header">
     <nav class="navbar-bg  navbar navbar-inverse header" id="main-navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -9,8 +9,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"></a>
-                <p class="logo"><img src="/images/logo1.png" alt="Servicedoer"> </p>
+                <a class="" href="/">
+                    <p class="logo"><img src="/images/logo1.png" alt="Servicedoer"> </p>
+                </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -72,7 +73,7 @@
                         </li>
                         <li class="dropdown nav-item user-dropdown">
                             <a class="dropdown-toggle nav-link " data-toggle="dropdown" href="#">
-                                <img src="{{ auth()->user()->profile_image }}" width=30px" class="">
+                                <div class="user-img" style="background-image:url({{ auth()->user()->profile_image }})"></div>
                                 <h4>{{ auth()->user()->name }}</h4>    
                                 <i class="fas fa-sort-down"></i>
                             </a>    

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<section id="review">
+<section id="review" class="customer-profile-page">
   <div class="container">
     @include('partials.messages')
       <div class="row">
           <div class="col-md-4">
               <div class="reviewer-div text-center">
-                  <img src="{{ $customer->profile_image }}" width="130" style="margin-top:15px" alt="reviewer">
+                  <div class="profile-pic" style="background-image:url({{ $customer->profile_image }})" ></div>
                   <h3>{{ $customer->name }}</h3>
                   <p class="location1"><i class="fas fa-map-marker-alt alt2"></i> {{ $customer->address  }}   {{ $customer->city->name }}</p>   
 

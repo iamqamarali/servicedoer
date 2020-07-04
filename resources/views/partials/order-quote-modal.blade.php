@@ -24,17 +24,19 @@
                         <b>Quote Price: </b>  <span class="quote-price"></span>            
                     </div>
 
-                    <form action="" class="order-quote-form d-none" method="post">
-                        @csrf
-                        <input type="button" class="continue continue-btn order-quote-form-submit-button" value="Accept Quote">
-                        <input type="button" class="continue continue-btn " data-dismiss="modal"  value="Cancel">
-                    </form>    
+                    <input type="button" class="continue continue-btn order-quote-form-submit-button" value="Accept Quote">
+                    <input type="button" class="continue continue-btn " data-dismiss="modal"  value="Cancel">
                 </div>
 
             </div>
         </div>
     </div>
 </div>
+
+
+<form action="" class="order-quote-form d-none" method="post">
+    @csrf
+</form>    
 
 
 @auth

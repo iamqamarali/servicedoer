@@ -40,23 +40,33 @@
                     --}}
                 @endif
 
-                <div class="main-trainer">
+                <div class="main-trainer service-providers-container ">
                     @foreach ($users as $user)
-                            <div class="trainers">
+                            <div class="trainers single-provider">
                                 <div class="row">
                                 <div class="col-md-4">
-                                    <img src="{{ $user->profile_image }}" alt="trainer" class="profile-img">
+                                    <div class="provider-dp" style="background-image:url({{ $user->profile_image }})" ></div>
                                 </div>
                                 <div class="col-md-7">
                                     <h2>{{ $user->name }}</h2>
-                                    <p>{{ $user->rating }}<span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>(19 reviews)</p>
+                                    @if ($user->serviceProviderReviews->count())
+                                        <p>{{ $user->rating }}
+                                            <span class="stars">
+                                                @for ($i = 0; $i < $user->serviceProviderReviews[0]->rating; $i++)
+                                                    <i class="fas fa-star"></i>
+                                                @endfor
+                                            </span>
+                                            ({{ $user->serviceProviderReviews->count() }} reviews)
+                                        </p>
+                                    @endif
+
                                     <p><i class="fas fa-map-marker-alt"></i> {{ $user->address  }}   {{ $user->city->name }}</p>
                                     @if ($user->serviceProviderReviews->count())
                                         <p class="testimonial testimonial2">{{ $user->serviceProviderReviews[0]->review }}</p>
                                         <p class="reviewer">{{ $user->serviceProviderReviews[0]->customer->name }}</p>
                                     @endif
-                                    <div class="button-div">
-                                        <a href="/profile/{{ $user->id }}" class="action-btn2">View Profile</a>
+                                    <div class="clearfix">
+                                        <a href="/profile/{{ $user->id }}" class="action-btn2 view-profile-btn">View Profile</a>
                                     </div>   
                                 </div>
                                 <div class="col-md-1"></div>  
