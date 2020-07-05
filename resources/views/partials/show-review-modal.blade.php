@@ -6,6 +6,9 @@
                 <div class="modal-content">
                     <div class="modal-body">
                         <div class="modal-inner-box">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
 
                             <h3>New Review received for <a href="" class="view-order">order</a></h3>                            
                             <br>
