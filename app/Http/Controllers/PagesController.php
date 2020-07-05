@@ -14,10 +14,13 @@ class PagesController extends Controller
     public function home(){
         return view('home')
                 ->withCities(City::all())
-                ->withPhotography(Service::where('name', 'Event Photographer')->first())
-                ->withYogaTrainer(Service::where('name', 'Yoga Trainer')->first())
-                ->withDietician(Service::where('name', 'Dietician')->first())
-                ->withPersonalTrainer(Service::where('name', 'Personal Trainer')->first());
+                ->withLahore(City::where('name', 'Lahore')->first())
+                ->withTutor(Service::where('name', 'Tutor')->first())
+                ->withElectrician(Service::where('name', 'Electrician')->first())
+                ->withPlumber(Service::where('name', 'Plumber')->first())
+                ->withMechanic(Service::where('name', 'Mechanic')->first())
+                ->withPhotography(Service::where('name', 'Photography')->first())
+                ->withHomeCleaning(Service::where('name', 'Home Cleaning')->first());
     }
 
     /**

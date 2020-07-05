@@ -3,6 +3,7 @@
 
 @section('content')
     
+@include('partials.messages')
 <section id="slider">
     <div class="container">
         <div class="row">
@@ -49,21 +50,26 @@
                 </div>
                 <div class="row services-rated">
                    <div class="col-md-4">
-                       <img src="images/service1.jpg" alt="house-cleaning" class="services-img">
-                       <h4>Full House Cleaning<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                    <a href="/service-providers/{{ $lahore->id }}/{{ $homeCleaning->id }}">
+                        <img src="images/service1.jpg" alt="house-cleaning" class="services-img">
+                        <h4>Full House Cleaning<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                    </a>
                    </div>
                    <div class="col-md-4">
-                    <img src="images/electricianimg.jpg" alt="Electrician" class="services-img">
-                    <h4>Electrician<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i>Look for doers</span></h4>
+                    <a href="/service-providers/{{ $lahore->id }}/{{ $electrician->id }}">
+                        <img src="images/electricianimg.jpg" alt="Electrician" class="services-img">
+                        <h4>Electrician<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i>Look for doers</span></h4>                        
+                    </a>
                   </div>
                   <div class="col-md-4">
-                    <img src="images/service3.jpg" alt="laundry" class="services-img">
-                    <h4>Laundry<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i>Look for doers</span></h4>
-                </div>
+                        <a href="/service-providers/{{ $lahore->id }}/{{ $homeCleaning->id }}">
+                            <img src="images/service3.jpg" alt="laundry" class="services-img">
+                            <h4>Laundry<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i>Look for doers</span></h4>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
-        @include('partials.messages')
         <section id="guarantee">
             <div class="container">
                 <div class="row">
@@ -92,16 +98,22 @@
                     </div>
                     <div class="row">
                        <div class="col-md-4">
-                           <img src="images/photo1.jpg" alt="couple shoot" class="services-img">
-                           <h4>Couple Shoot<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i>Look for doers</span></h4>
+                            <a href="/service-providers/{{ $lahore->id }}/{{ $photography->id }}">
+                                <img src="images/photo1.jpg" alt="couple shoot" class="services-img">
+                                <h4>Couple Shoot<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i>Look for doers</span></h4>                               
+                            </a>
                        </div>
                        <div class="col-md-4">
-                        <img src="images/photo2.jpg" alt="wedding shoot" class="services-img">
-                        <h4>Wedding Shoot<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                        <a href="/service-providers/{{ $lahore->id }}/{{ $photography->id }}">
+                            <img src="images/photo2.jpg" alt="wedding shoot" class="services-img">
+                            <h4>Wedding Shoot<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                        </a>
                       </div>
                       <div class="col-md-4">
                         <img src="images/tutor.jpg" alt="Tutor" class="services-img">
-                        <h4>Tutor<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                        <a href="/service-providers/{{ $lahore->id }}/{{ $tutor->id }}">
+                            <h4>Tutor<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                        </a>
                     </div>
                     </div>
                 </div>
@@ -117,16 +129,22 @@
                     </div>
                     <div class="row">
                        <div class="col-md-4">
-                           <img src="images/mechanic.jpg" alt="Mechanic" class="services-img">
-                           <h4>Mechanic<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                            <a href="/service-providers/{{ $lahore->id }}/{{ $mechanic->id }}">
+                                <img src="images/mechanic.jpg" alt="Mechanic" class="services-img">
+                                <h4>Mechanic<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>                               
+                            </a>
                        </div>
                        <div class="col-md-4">
-                        <img src="images/generator.jpg" alt="Generator Repair" class="services-img">
-                        <h4>Generator Repairs<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                        <a href="/service-providers/{{ $lahore->id }}/{{ $mechanic->id }}">
+                            <img src="images/generator.jpg" alt="Generator Repair" class="services-img">
+                            <h4>Generator Repairs<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>                            
+                        </a>
                       </div>
                       <div class="col-md-4">
-                        <img src="images/Plumber.jpg" alt="Plumber" class="services-img">
-                        <h4>Plumber<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                        <a href="/service-providers/{{ $lahore->id }}/{{ $plumber->id }}">
+                            <img src="images/Plumber.jpg" alt="Plumber" class="services-img">
+                            <h4>Plumber<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>                            
+                        </a>
                     </div>
                     </div>
                 </div>
@@ -147,23 +165,31 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                       <img src="images/watermeter.jpg" alt="water meter installation" class="expert-img">
-                       <h4>Water Meter Installation<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                        <a href="/service-providers/{{ $lahore->id }}/{{ $plumber->id }}">
+                            <img src="images/watermeter.jpg" alt="water meter installation" class="expert-img">
+                            <h4>Water Meter Installation<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>                                
+                        </a>
                     </div>
                     <div class="col-md-4">
+                        <a href="/service-providers/{{ $lahore->id }}/{{ $plumber->id }}">
                             <img src="images/bathtub.jpg" alt="Bath-tub Fitting" class="expert-img1">
-                            <h4>Bath-Tub Fitting<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                            <h4>Bath-Tub Fitting<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>                            
+                        </a>
                     </div>
                     <div class="col-md-4">
+                        <a href="/service-providers/{{ $lahore->id }}/{{ $electrician->id }}">
                             <img src="images/service2.jpg" alt="Electronic wiring" class="expert-img2">
-                            <h4>Electricial Wiring<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                            <h4>Electricial Wiring<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>                                
+                        </a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4"></div>
                     <div class="col-md-8 plumber">
-                        <img src="images/upsandinverter.jpg" alt="UPS Inverter repair" class="expert-img3">
-                        <h4>UPS & Inverter Replacement<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>
+                        <a href="/service-providers/{{ $lahore->id }}/{{ $electrician->id }}">
+                            <img src="images/upsandinverter.jpg" alt="UPS Inverter repair" class="expert-img3">
+                            <h4>UPS & Inverter Replacement<br/><span class="date-info"><i class="fas fa-map-marker-alt"></i> Look for doers</span></h4>                            
+                        </a>
                     </div>
 
                 </div>
