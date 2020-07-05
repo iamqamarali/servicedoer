@@ -112,18 +112,15 @@
 
             <div class="trainer-box"> 
                 <div class="row let-us">
-                    <h3>Let us help you find a better service provider</h3>
+                    <h3>Please provide details about your work</h3>
                 </div>
                 <div class="row">
-                      <form action="#" id="main-form">
+                        <form action="#" id="main-form">
                             <p class="gender question">What sex are you looking for?</p>
 
-
-                            <div class="answers">
-                 
-                            </div>            
-                          </form>
-                          <div class="text-center"><input type="button" class="continue continue-btn continue-button" value="Continue"></div>
+                            <div class="answers"></div>
+                        </form>
+                        <div class="text-center"><input type="button" class="continue continue-btn continue-button" value="Continue"></div>
                 </div>
             </div>   
         </div>
@@ -178,7 +175,7 @@
     })
 
     function renderQuestion(qn){
-        $('#service-questions-modal .question').html(questions[qn].question)
+        $('#service-questions-modal .question').html(questions[qn].service_provider_question)
         var $answersContainer = $('#service-questions-modal .answers')
         $answersContainer.html('');
         var answers = questions[qn].answers

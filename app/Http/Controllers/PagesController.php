@@ -59,7 +59,8 @@ class PagesController extends Controller
             [
                 '$match'=>[
                     'city_id' => $city,
-                    'service_id' => $service
+                    'service_id' => $service,
+                    'search' => true
                 ]
             ],
             [
@@ -80,7 +81,7 @@ class PagesController extends Controller
             ]);
         });
 
-        return view('best-provider')->withProvider($provider[0]);
+        return view('best-provider')->withProvider(isset($provider[0])?$provider[0] : null);
     }
 
     /**

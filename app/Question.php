@@ -10,7 +10,8 @@ class Question extends Model
         'question',
         'service_provider_question',
         'type', // text, radio, checkbox
-        'service_id'
+        'service_id',
+        'question_number'// some number
     ];
 
 

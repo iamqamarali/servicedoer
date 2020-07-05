@@ -7,7 +7,7 @@ use Jenssegers\Mongodb\Eloquent\Model;
 class Answer extends Model
 {
     protected $fillable = [
-        'answer', 'question_id'
+        'answer', 'question_id',
     ];
 
 
