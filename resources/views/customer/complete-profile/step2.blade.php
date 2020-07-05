@@ -38,7 +38,6 @@
                               <div class="form-group">
                                 <label for="city" class="location-info">City</label>
                                 <select class="form-control form-input city-select" name="city">
-                                    <option value="">City</option>
                                     @foreach ($cities as $city)                               
                                         <option value="{{ $city->id }}">{{ $city->name }}</option>
                                     @endforeach

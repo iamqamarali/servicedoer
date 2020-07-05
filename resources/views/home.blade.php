@@ -12,7 +12,6 @@
                     <div class="col-md-4">
                         <label class="select-box">
                            <select class="form-control form-input location-input city-select">
-                               <option value="">City</option>
                                @foreach ($cities as $city)                               
                                    <option value="{{ $city->id }}">{{ $city->name }}</option>
                                @endforeach

@@ -15,9 +15,6 @@ class CitiesSeeder extends Seeder
         City::truncate();
         $cities = [
             'Lahore', 
-            'Islamabad',
-            'Faisalabad',
-            'Rawalpindi'
         ];
         foreach($cities as $city){
             City::create([
