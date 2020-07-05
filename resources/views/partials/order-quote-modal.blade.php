@@ -25,7 +25,7 @@
                     </div>
 
                     <input type="button" class="continue continue-btn order-quote-form-submit-button" value="Accept Quote">
-                    <input type="button" class="continue continue-btn " data-dismiss="modal"  value="Cancel">
+                    <input type="button" class="continue continue-btn  order-cancel-button"  value="Cancel">
                 </div>
 
             </div>
@@ -43,22 +43,32 @@
 @if (auth()->user()->type =='customer')
     @push('scripts')
         <script>
-
+            var notificationId = null;
+            
             $('.order-cancel-button').click(function(){
                 $('#order-quote-modal').modal('hide');
+                e.preventDefault();
+                if(notificationId == null)
+                    return 
+                $.ajax({
+                    method: 'get',
+                    url : '/api/notifications/markasread/'+notificationId,
+                    success: function(res){
+                        console.log(res)
+                    },
+                })
             })
 
             $('.quote-received-notification').click(function(e){
                 e.preventDefault();
                 var $self = $(this)
                 var quoteId = $self.attr('quote-id')
-                var notificationId = $self.attr('notification-id');
+                notificationId = $self.attr('notification-id');
                 $('.order-quote-form').attr('action', 'orders/'+quoteId)
                 $.ajax({
                     url: '/api/quotes/'+quoteId,
                     success: function(quote){
                         console.log(quote);
-                        $('#order-quote-modal').modal('show')
                         var $pd = $('.project-description');
                         $pd.html('');
                         $('.service-provider-name').html(quote.service_provider.first_name + ' ' + quote.service_provider.last_name);
@@ -73,21 +83,25 @@
                             $question.append($contatiner);                            
                             $pd.append($question);
                         })
-
-                        $('.order-quote-form-submit-button').on('click', function(e){
-                            e.preventDefault();
-                            $.ajax({
-                                method: 'get',
-                                url : '/api/notifications/markasread/'+notificationId,
-                                success: function(res){
-                                    console.log(res)
-                                   $('.order-quote-form').submit();
-                                },
-                            })
-                        })
+                        $('#order-quote-modal').modal('show')
                     },
                     error: function(err){
                     }
+                })
+
+
+                $('.order-quote-form-submit-button').on('click', function(e){
+                    e.preventDefault();
+                    if(notificationId == null)
+                        return 
+                    $.ajax({
+                        method: 'get',
+                        url : '/api/notifications/markasread/'+notificationId,
+                        success: function(res){
+                            console.log(res)
+                            $('.order-quote-form').submit();
+                        },
+                    })
                 })
 
 
