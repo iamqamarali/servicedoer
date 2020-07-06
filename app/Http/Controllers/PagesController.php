@@ -28,7 +28,7 @@ class PagesController extends Controller
      * 
      */
     public function serviceProviders(Request $request, $city, $service){
-        $users = User::where('service_id', $service)->where('city_id', $city)->paginate(20);
+        $users = User::where('service_id', $service)->where('city_id', $city)->paginate(10);
         $service = Service::findOrFail($service);
         return view('service-providers')
                 ->withUsers($users)

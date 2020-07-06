@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1 class="slider-heading">Find Local professional for pretty much for everything.</h1>
+                <h1 class="slider-heading">Find Local professional for pretty much everything.</h1>
                 <div class="row no-gutters"> 
                     <div class="col-md-4">
                         <label class="select-box">
