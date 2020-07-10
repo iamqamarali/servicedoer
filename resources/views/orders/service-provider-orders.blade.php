@@ -15,7 +15,7 @@
                 <div class="col-md-3 customer-profile2">
                     <div class="row">
                         <div class="col-md-3 text-center customer-profile2">
-                        <img src="{{ $order->customer->profile_image }}" alt="customer" class="customer" />
+                            <div class="img" style="background-image:url('{{ $order->customer->profile_image }}')"></div>
                         </div>
                         <div class="col-md-9 customer-info">
                             <a href="{{ route('customer.profile', $order->customer->id) }}">
