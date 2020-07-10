@@ -112,7 +112,7 @@ class PagesController extends Controller
         return view('profile')
                 ->withProvider($provider)
                 ->withOrders($provider->service_provider_orders()->where('status', 'Completed')->get())
-                ->withReviews($provider->serviceProviderReviews()->paginate(5));
+                ->withReviews($provider->serviceProviderReviews()->latest()->paginate(5));
     }
 
 

@@ -37,6 +37,10 @@ class QuoteController extends Controller
     public function requestQuote(Request $request, $provider, $project){
         $provider = User::findOrFail($provider);
         $project = Project::findOrFail($project);
+        if($project->service_id != $provider->service_id){
+            Session::forget('project');
+            return redirect()->back();
+        }
         $provider->notifications()->create([
             'data' => [
                 'message' => 'New Quote Request',
