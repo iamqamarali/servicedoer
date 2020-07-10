@@ -63,7 +63,11 @@
                                     <p><i class="fas fa-map-marker-alt"></i> {{ $user->address  }}   {{ $user->city->name }}</p>
                                     @if ($user->serviceProviderReviews->count())
                                         <p class="testimonial testimonial2">{{ $user->serviceProviderReviews[$user->serviceProviderReviews()->count() - 1]->review }}</p>
-                                        <p class="reviewer">{{ $user->serviceProviderReviews[$user->serviceProviderReviews()->count() - 1]->customer->name }}</p>
+                                        <p class="reviewer">
+                                            <a href="/customer/profile/{{ $user->serviceProviderReviews[$user->serviceProviderReviews()->count() - 1]->customer->id }}">
+                                                {{ $user->serviceProviderReviews[$user->serviceProviderReviews()->count() - 1]->customer->name }}
+                                            </a>
+                                        </p>
                                     @endif
                                     <div class="clearfix">
                                         <a href="/profile/{{ $user->id }}" class="action-btn2 view-profile-btn">View Profile</a>
@@ -79,7 +83,7 @@
             </div>
           <div class="col-md-4">
               <form action="#" class="trainer-form2 service-question-trigger-box">
-                  <h3 class="trainer-heading service-main-question-heading">Trainer Need for</h3>
+                  <h3 class="trainer-heading service-main-question-heading">Doer Need for</h3>
                   <div class="service-main-question-answers">
                 </div>
             </form>

@@ -28,7 +28,8 @@
                                     <input type="number" placeholder="Price" name="quote" class="form-control" value="">
                                 </div>
                             </div>
-                            <div class="text-center"><input type="button" class="continue continue-btn continue-button give-quote-form-submit-button" value="Continue"></div>
+                            <input type="button" class="continue continue-btn continue-button give-quote-form-submit-button" value="Continue">
+                            <input type="button" class="continue continue-btn  quote-cancel-button"  value="Cancel">
                         </form>
                     </div>
 
@@ -43,9 +44,28 @@
 @if (auth()->user()->type =='service-provider')
     @push('scripts')
         <script>
+            var notificationId = null;
+            
+            $('.quote-cancel-button').click(function(e){
+                $('#give-quote-modal').modal('hide');
+                e.preventDefault();
+                if(notificationId == null)
+                    return 
+                $.ajax({
+                    method: 'get',
+                    url : '/api/notifications/markasread/'+notificationId,
+                    success: function(res){
+                        console.log(res)
+                        location.reload(true)
+                    },
+                })
+            })
+
+
+
             $('.give-quote-notification').click(function(){
                 var projectId = $(this).attr('project-id')
-                var notificationId = $(this).attr('notification-id');
+                notificationId = $(this).attr('notification-id');
                 $.ajax({
                     url: '/api/projects/'+projectId,
                     success: function(project){

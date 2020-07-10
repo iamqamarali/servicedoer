@@ -21,7 +21,7 @@
                       @if ($provider->serviceProviderReviews->count())
                           <p>{{ $provider->rating }}
                               <span class="stars">
-                                  @for ($i = 0; $i < $provider->serviceProviderReviews[0]->rating; $i++)
+                                  @for ($i = 0; $i < $provider->serviceProviderReviews[$user->serviceProviderReviews()->count() - 1]->rating; $i++)
                                       <i class="fas fa-star"></i>
                                   @endfor
                               </span>
@@ -31,8 +31,12 @@
 
                       <p><i class="fas fa-map-marker-alt"></i> {{ $provider->address  }}   {{ $provider->city->name }}</p>
                       @if ($provider->serviceProviderReviews->count())
-                          <p class="testimonial testimonial2">{{ $provider->serviceProviderReviews[0]->review }}</p>
-                          <p class="reviewer">{{ $provider->serviceProviderReviews[0]->customer->name }}</p>
+                        <p class="testimonial testimonial2">{{ $user->serviceProviderReviews[$user->serviceProviderReviews()->count() - 1]->review }}</p>
+                        <p class="reviewer">
+                            <a href="/customer/profile/{{ $user->serviceProviderReviews[$user->serviceProviderReviews()->count() - 1]->customer->id }}">
+                                {{ $user->serviceProviderReviews[$user->serviceProviderReviews()->count() - 1]->customer->name }}
+                            </a>
+                        </p>
                       @endif
                       <div class="clearfix">
                           <a href="/profile/{{ $provider->id }}" class="action-btn2 view-profile-btn">View Profile</a>
