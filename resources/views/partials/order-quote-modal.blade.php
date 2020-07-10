@@ -55,6 +55,7 @@
                     url : '/api/notifications/markasread/'+notificationId,
                     success: function(res){
                         console.log(res)
+                        location.reload(true)
                     },
                 })
             })
