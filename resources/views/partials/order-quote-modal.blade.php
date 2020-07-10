@@ -45,7 +45,7 @@
         <script>
             var notificationId = null;
             
-            $('.order-cancel-button').click(function(){
+            $('.order-cancel-button').click(function(e){
                 $('#order-quote-modal').modal('hide');
                 e.preventDefault();
                 if(notificationId == null)
