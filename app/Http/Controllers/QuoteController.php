@@ -43,7 +43,7 @@ class QuoteController extends Controller
         }
         $provider->notifications()->create([
             'data' => [
-                'message' => 'New Quote Request',
+                'message' => 'New Quote Request from '.  auth()->user()->name,
                 'type' => 1,
                 'project_id' => $project->id,
                 'customer_id' => auth()->user()->id
