@@ -19,9 +19,9 @@
                         </div>
                         <div class="col-md-9 customer-info">
                             <a href="{{ route('customer.profile', $order->customer->id) }}">
-                                <h4>{{ $order->service_provider->name }}</h4>
+                                <h4>{{ $order->customer->name }}</h4>
                             </a>
-                            <i class="fas fa-map-marker-alt map-sign"></i> {{ $order->service_provider->address }}  {{ $order->service_provider->city->name }}
+                            <i class="fas fa-map-marker-alt map-sign"></i> {{ $order->customer->address }}  {{ $order->customer->city->name }}
                         </div>
                     </div>
                 </div>
